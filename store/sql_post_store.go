@@ -32,12 +32,15 @@ func NewSqlPostStore(sqlStore *SqlStore) PostStore {
 		table.ColMap("Hashtags").SetMaxSize(1000)
 		table.ColMap("Props").SetMaxSize(8000)
 		table.ColMap("Filenames").SetMaxSize(4000)
+		table.ColMap("HasReactions").SetMaxSize(1)
 	}
 
 	return s
 }
 
 func (s SqlPostStore) UpgradeSchemaIfNeeded() {
+	// TODO port this to Corey's thing eventually
+	s.CreateColumnIfNotExists("Posts", "HasReactions", "tinyint", "boolean", "0")
 }
 
 func (s SqlPostStore) CreateIndexesIfNotExists() {

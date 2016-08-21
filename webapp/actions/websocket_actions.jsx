@@ -156,6 +156,14 @@ function handleEvent(msg) {
         handleStatusChangedEvent(msg);
         break;
 
+    case SocketEvents.REACTION_ADDED:
+        handleReactionAddedEvent(msg);
+        break;
+
+    case SocketEvents.REACTION_REMOVED:
+        handleReactionRemovedEvent(msg);
+        break;
+
     default:
     }
 }
@@ -280,4 +288,24 @@ function handleUserTypingEvent(msg) {
 
 function handleStatusChangedEvent(msg) {
     UserStore.setStatus(msg.user_id, msg.data.status);
+}
+
+function handleReactionAddedEvent(msg) {
+    const reaction = JSON.parse(msg.data.reaction);
+
+    AppDispatcher.handleServerAction({
+        type: ActionTypes.ADDED_REACTION,
+        postId: reaction.post_id,
+        reaction
+    });
+}
+
+function handleReactionRemovedEvent(msg) {
+    const reaction = JSON.parse(msg.data.reaction);
+
+    AppDispatcher.handleServerAction({
+        type: ActionTypes.REMOVED_REACTION,
+        postId: reaction.post_id,
+        reaction
+    });
 }
