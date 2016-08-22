@@ -994,6 +994,16 @@ export default class Client {
             end(this.handleResponse.bind(this, 'getStatuses', success, error));
     }
 
+    getTeamStatuses(id, success, error) {
+        request.
+        post(`${this.getUsersRoute()}/team_statuses`).
+        set(this.defaultHeaders).
+        type('application/json').
+        accept('application/json').
+        send({team_id: id}).
+        end(this.handleResponse.bind(this, 'getTeamStatuses', success, error));
+    }
+
     verifyEmail(uid, hid, success, error) {
         request.
             post(`${this.getUsersRoute()}/verify_email`).
