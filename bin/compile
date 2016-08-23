@@ -340,6 +340,9 @@ case ${TOOL} in
     ;;
 esac
 
+apt-get update
+apt-get install nodejs
+apt-get install npm
 cd $build
 make build-client
 

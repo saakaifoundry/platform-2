@@ -45,17 +45,5 @@
             "description": "EmailSettings PasswordResetSalt",
             "generator": "secret"
     }
-  },
-  "engines": {
-    "node": "5.3.0",
-    "npm": "3.9.5"
-  },
-  "buildpacks": [
-    {
-        "url":"https://github.com/heroku/heroku-buildpack-nodejs"
-    },
-    {
-        "url":"https://github.com/kr/heroku-buildpack-inline.git"
-    }
-  ]
+  }
 }
