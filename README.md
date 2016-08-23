@@ -1,5 +1,7 @@
 # Mattermost
 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/mattermost/platform/tree/plt-3906)
+
 Mattermost Team Edition is an open source, self-hosted Slack-alternative. 
 
 It's written in Golang and React and runs as a single Linux binary with either MySQL or Postgres. Every month on the 16th a new compiled version is released under an MIT license. 

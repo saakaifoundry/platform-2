@@ -311,7 +311,6 @@ endif
 	@# Don't cleanup linux package so dev machines will have an unziped linux package avalilable
 	@#rm -f $(DIST_PATH)/bin/platform
 
-
 run-server: prepare-enterprise start-docker
 	@echo Running mattermost for development
 
