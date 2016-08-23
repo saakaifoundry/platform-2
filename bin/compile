@@ -340,6 +340,12 @@ case ${TOOL} in
     ;;
 esac
 
+cd $build/.heroku
+curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+sudo apt-get install -y nodejs
+cd $build
+make build-client
+
 if ! test -e $build/Procfile && test -n "${name}"
 then
   echo -e "web: $(basename $name)" >> $build/Procfile
