@@ -5,7 +5,6 @@
   "keywords": ["mattermost"],
   "success_url": "/",
   "env": {
-    "BUILDPACK_URL": "https://github.com/kr/heroku-buildpack-inline.git",
     "SQL_SETTINGS__AT_REST_ENCRYPT_KEY": {
             "description": "SqlSettings AtRestEncryptKey",
             "generator": "secret"
@@ -45,5 +44,17 @@
             "description": "EmailSettings PasswordResetSalt",
             "generator": "secret"
     }
-  }
+  },
+  "engines": {
+    "node": "5.3.0",
+    "npm": "3.9.5"
+  },
+  "buildpacks": [
+    {
+        "url":"https://github.com/heroku/heroku-buildpack-nodejs"
+    },
+    {
+        "url":"https://github.com/kr/heroku-buildpack-inline.git"
+    }
+  ]
 }
