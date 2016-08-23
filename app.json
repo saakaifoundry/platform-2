@@ -5,6 +5,7 @@
   "keywords": ["mattermost"],
   "success_url": "/",
   "env": {
+    "BUILDPACK_URL": "https://github.com/kr/heroku-buildpack-inline.git",
     "SQL_SETTINGS__AT_REST_ENCRYPT_KEY": {
             "description": "SqlSettings AtRestEncryptKey",
             "generator": "secret"
