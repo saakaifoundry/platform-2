@@ -340,9 +340,6 @@ case ${TOOL} in
     ;;
 esac
 
-cd $build/.heroku
-curl -sL https://deb.nodesource.com/setup_5.x | bash -
-apt-get install -y nodejs
 cd $build
 make build-client
 
